@@ -23,8 +23,8 @@ function FormBox({input}) {
         <div className="text-black">
             {input==="Teléfono"?
             <section className="flex flex-col items-start">
-                <label for={input} className='text-12'>{input}</label>
-                <div className="border border-inputBorder  rounded-6px">
+                <label htmlFor={input} className='text-12'>{input}</label>
+                <div className="border border-inputBorder rounded-6px">
                     <select name="pais" id="pais" className="px-13px py-9px shadow-sm text-12">
                         <option value="US">US</option>
                         <option value="ESP">ESP</option>
@@ -41,14 +41,14 @@ function FormBox({input}) {
                 <div className="flex gap-3">
                     <input type={inputType}  name={input} id={input} />
                     <p className="text-politicsLetters text-14">
-                        Acepto la <a className="font-semibold">Política de privacidad</a> y los <a className="font-semibold">Términos y condiciones</a>
+                        Acepto la <a className="font-semibold cursor-pointer">Política de privacidad</a> y los <a className="font-semibold cursor-pointer">Términos y condiciones</a>
                     </p>
                 </div>
                 :input==="Enviar"?
-                <button type={inputType} className="bg-green rounded-4px px-24px py-12px  text-white">{input}</button>
+                <button type={inputType} className="bg-green rounded-4px px-24px py-12px text-white">{input}</button>
                 :
                 <div className="flex flex-col items-start">
-                    <label for={input} className='text-12'>{input}</label>
+                    <label htmlFor={input} className='text-12'>{input}</label>
                     <input type={inputType} id={input} name={input} required autoComplete="off" placeholder={input} className="border border-inputBorder px-13px py-9px rounded-6px shadow-sm outline-none text-12" />
                 </div>
             }

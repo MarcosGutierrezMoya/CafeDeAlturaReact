@@ -18,7 +18,7 @@ function CoffeBags() {
                                     <input type="button" value={coffe.brand} className='font-semibold' />
                                     <p>9,00 €</p>
                                 </div>
-                                <input class="masProducto" type="button" value="Añadir" className='bg-green/70 text-white text-14 font-semibold p-8px rounded-4px group-hover/coffee:bg-green cursor-pointer' />
+                                <input type="button" value="Añadir" className='bg-green/70 text-white text-14 font-semibold p-8px rounded-4px group-hover/coffee:bg-green cursor-pointer' />
                             </article>
                         )
                     }})}

@@ -1,3 +1,4 @@
+import FormContextProvider from '../context/FormContext';
 import Benefits from '../home_pages/Benefits';
 import CoffeBags from '../home_pages/CoffeBags';
 import Faq from '../home_pages/Faq';
@@ -17,7 +18,9 @@ function Home() {
             <CoffeBags />
             <Faq />
             <Info />
-            <Form />
+            <FormContextProvider>
+                <Form />
+            </FormContextProvider>
             <Footer />
         </div>
     )

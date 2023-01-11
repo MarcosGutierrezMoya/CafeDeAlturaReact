@@ -8,6 +8,7 @@ module.exports = {
       'white': '#ffffff',
       'black': '#000000',
       'green': '#2A5B45',
+      'red': '#FF0000',
       'navGrey': '#2B2A2B',
       'navBtnGrey': '#515051',
       'homeTittleBg': '#E3DED74D',

@@ -1,8 +1,22 @@
 import tlfLogoGris from '../img/tlfLogoGris.svg';
 import mailLogoGris from '../img/mailLogoGris.svg';
-import FormBox from './components/FormBox';
+// import FormBox from './components/FormBox';
+import FormUser from './components/FormUser';
+import FormMail from './components/FormMail';
+import FormPhone from './components/FormPhone';
+import FormOpinion from './components/FormOpinion';
+import FormPolitics from './components/FormPolitics';
+import FormSubmit from './components/FormSubmit';
+import { useContext } from "react";
+import { FormContext } from "../context/FormContext";
 
 function Form() {
+    const {submit} = useContext(FormContext);
+
+    function makeSubmit(e) {
+        e.preventDefault();
+        submit();
+    }
 
     return (
         <section id="formPage" className='flex bg-homeFormBg pr-40px'>
@@ -21,19 +35,19 @@ function Form() {
                         </div>
                         <p className='flex gap-1.5'>
                             ¿Buscas un trabajo?
-                            <a className='text-formInfoBold font-semibold underline'>Ver nuestras ofertas.</a>
+                            <a className='text-formInfoBold font-semibold underline cursor-pointer'>Ver nuestras ofertas.</a>
                         </p>
                     </main>
                 </div>
             </article>
             <aside className='bg-white w-588 py-32px pl-67px pr-48px'>
-                <form id="submit" className='flex flex-col gap-6'>
-                    <FormBox input="Nombre completo" />
-                    <FormBox input="Email" />
-                    <FormBox input="Teléfono" />
-                    <FormBox input="opinion" />
-                    <FormBox input="politicas" />
-                    <FormBox input="Enviar" />
+                <form onSubmit={makeSubmit} id="submit" className='flex flex-col gap-6'>
+                    <FormUser />
+                    <FormMail />
+                    <FormPhone />
+                    <FormOpinion />
+                    <FormPolitics />
+                    <FormSubmit />
                 </form>
             </aside>
         </section>
