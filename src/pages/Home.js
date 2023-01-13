@@ -1,4 +1,3 @@
-import FormContextProvider from '../context/FormContext';
 import Benefits from '../home_pages/Benefits';
 import CoffeBags from '../home_pages/CoffeBags';
 import Faq from '../home_pages/Faq';
@@ -12,15 +11,13 @@ function Home() {
     
     return(
         <div>
-            <NavBar />
+            <NavBar rutas={true} />
             <Title />
             <Benefits />
-            <CoffeBags />
+            <CoffeBags cuantity={4} />
             <Faq />
             <Info />
-            <FormContextProvider>
-                <Form />
-            </FormContextProvider>
+            <Form />
             <Footer />
         </div>
     )

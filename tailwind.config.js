@@ -40,9 +40,11 @@ module.exports = {
       "8px": '8px',
       "10px": '10px',
       "20px": '20px',
+      "200px": '200px',
     },
     extend: {
       padding: {
+        '4px': '4px',
         '8px': '8px',
         "9px": '9px',
         '12px': '12px',

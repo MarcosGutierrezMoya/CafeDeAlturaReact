@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import flechitaAbajo from '../../img/flechitaAbajo.svg'
 
 function FaqBox({pos}) {
@@ -6,18 +6,14 @@ function FaqBox({pos}) {
     let paragraph = "";
     const divider = useRef();
     const p = useRef();
+    const [openBox,setOpenBox] = useState(false);
     
     function openCloseFaq(){
-        divider.current.classList.toggle("opacity-0");
-        p.current.classList.toggle("opacity-0");
+        setOpenBox(!openBox);
         if (p.current.innerText !== "") {
-            setTimeout(() => {
-                p.current.innerText = "";
-                divider.current.parentElement.classList.toggle("h-20");
-            }, 600);
+            p.current.innerText = "";
         }
         else{
-            divider.current.parentElement.classList.toggle("h-20");
             switch (pos) {
                 case 0:
                     p.current.innerText = "Selecciona el café que desees probar y completa el proceso de compra. Si lo prefieres, te preguntaremos cada cuánto quieres que te lo mandemos a casa y así nunca te quedarás sin café.";
@@ -31,30 +27,27 @@ function FaqBox({pos}) {
             }  
         }
     }
-
+    
     switch (pos) {
         case 0:
             question = "¿Cómo hago el pedido?";
-            paragraph = "Selecciona el café que desees probar y completa el proceso de compra. Si lo prefieres, te preguntaremos cada cuánto quieres que te lo mandemos a casa y así nunca te quedarás sin café.";
             break;
         case 1:
             question = "¿Por qué los precios son tan bajos?";
-            paragraph = "Viajamos constantemente para encontrar los mejores granos y a los agricultores más exigentes. Si podemos ofrecerte estos precios es porque tratamos directamente con los productores de café, sin intermediarios. Así obtenemos el mejor precio para ti y la persona que está detrás de los granos de café recibe el mayor beneficio posible.";
             break;
         case 2:               
             question = "¿Es posible enviar café a mi oficina?";
-            paragraph = "Si, pero solo si te haces VIP.";
             break;
     }
 
     return(
-        <article className={`bg-white p-24px flex flex-col gap-4 rounded-10px transition-[height] duration-500 w-[688px]`}>
+        <article className={`bg-white p-24px flex flex-col gap-4 rounded-10px ${openBox?"":"h-20"} transition-[height] duration-500 w-[688px]`}>
             <section className='flex justify-between'>
                 <h3 className='text-18 font-semibold text-faqLetters'>{question}</h3>
-                <img id={`flecha${pos}`} className="cursor-pointer" onClick={openCloseFaq} src={flechitaAbajo} alt="abierto" />
+                <img id={`flecha${pos}`} className={`${openBox?"":"rotate-180"} cursor-pointer`} onClick={openCloseFaq} src={flechitaAbajo} alt="abierto" />
             </section>
-            <div className="bg-lightGrey h-1 rounded-4px transition-opacity duration-700" ref={divider}/>
-            <p className='transition-opacity duration-700' ref={p}>{paragraph}</p>
+            <div className={`bg-lightGrey h-1 rounded-4px ${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={divider}/>
+            <p className={`${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={p}>{paragraph}</p>
         </article>
     )
 }

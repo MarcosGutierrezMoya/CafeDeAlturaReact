@@ -1,12 +1,12 @@
 import tlfLogoGris from '../img/tlfLogoGris.svg';
 import mailLogoGris from '../img/mailLogoGris.svg';
 // import FormBox from './components/FormBox';
-import FormUser from './components/FormUser';
-import FormMail from './components/FormMail';
-import FormPhone from './components/FormPhone';
-import FormOpinion from './components/FormOpinion';
-import FormPolitics from './components/FormPolitics';
-import FormSubmit from './components/FormSubmit';
+import FormUser from './components/Form/FormUser';
+import FormMail from './components/Form/FormMail';
+import FormPhone from './components/Form/FormPhone';
+import FormOpinion from './components/Form/FormOpinion';
+import FormPolitics from './components/Form/FormPolitics';
+import FormSubmit from './components/Form/FormSubmit';
 import { useContext } from "react";
 import { FormContext } from "../context/FormContext";
 
@@ -42,9 +42,9 @@ function Form() {
             </article>
             <aside className='bg-white w-588 py-32px pl-67px pr-48px'>
                 <form onSubmit={makeSubmit} id="submit" className='flex flex-col gap-6'>
-                    <FormUser />
+                    <FormUser text={"Nombre Completo"} />
                     <FormMail />
-                    <FormPhone />
+                    <FormPhone hasLands={true} />
                     <FormOpinion />
                     <FormPolitics />
                     <FormSubmit />

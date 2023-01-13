@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { FormContext } from "../../context/FormContext";
+import { FormContext } from "../../../context/FormContext";
 
 function FormPolitics() {
     const {setPolitics} = useContext(FormContext);
