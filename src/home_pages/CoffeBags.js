@@ -1,12 +1,17 @@
 import flechaLogo from '../img/flecha.svg'
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {ShopContext} from '../context/ShopContext';
 import { ApiCoffes } from '../ApiFiles/Api';
+import { Link } from 'react-router-dom';
 
 function CoffeBags({cuantity}) {
     const {coffes,setCoffes} = useContext(ShopContext);
     const [allCoffes,setAllCoffes] = useState([]);
-    ApiCoffes().then(response=> setAllCoffes(response.products));
+
+    useEffect(()=>{
+        ApiCoffes().then(response=> setAllCoffes(response.products));
+    },[]);
+
 
     function buyCoffe(newCoffe) {
         if (!coffes.find(coffe=> coffe.brand === newCoffe.brand)) {
@@ -30,10 +35,15 @@ function CoffeBags({cuantity}) {
                                 <input type="button" value="Añadir" onClick={()=>buyCoffe(coffe)} className={`bg-green/70 text-white text-14 font-semibold p-8px rounded-4px ${coffe.available?'group-hover/coffee:bg-green cursor-pointer ':'grayscale-[60%]'}`} />
                             </article>
                         )
+                    }
+                    else{
+                        return(
+                            <div key={i} ></div>
+                        )
                     }})}
                 </div>
                 <article className='flex gap-4'>
-                    <a href="" className=' text-14 font-semibold underline'>Ver todos</a>
+                    <Link to="/Tienda" className=' text-14 font-semibold underline'>Ver todos</Link>
                     <img src={flechaLogo} alt="flecha" />
                 </article>
             </section>

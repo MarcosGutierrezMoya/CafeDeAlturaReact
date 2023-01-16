@@ -11,9 +11,12 @@ function FormContextProvider({children}) {
     const [politics,setPolitics] = useState(false);
 
     function submit() {
-        
-        setUser({ "name": userName, "email": mail, "Telephone": phone, "opinion": opinion })
-        console.log(user);
+        if (politics) {
+            setUser({ "name": userName, "email": mail, "Telephone": phone, "opinion": opinion })
+            setTimeout(() => {
+                console.log(user);
+            }, 500);
+        }
     };
     
     const isBetween = (length, min, max) => length < min || length > max ? false : true;

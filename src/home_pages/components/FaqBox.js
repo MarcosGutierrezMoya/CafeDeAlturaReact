@@ -3,7 +3,6 @@ import flechitaAbajo from '../../img/flechitaAbajo.svg'
 
 function FaqBox({pos}) {
     let question = "";
-    let paragraph = "";
     const divider = useRef();
     const p = useRef();
     const [openBox,setOpenBox] = useState(false);
@@ -47,7 +46,7 @@ function FaqBox({pos}) {
                 <img id={`flecha${pos}`} className={`${openBox?"":"rotate-180"} cursor-pointer`} onClick={openCloseFaq} src={flechitaAbajo} alt="abierto" />
             </section>
             <div className={`bg-lightGrey h-1 rounded-4px ${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={divider}/>
-            <p className={`${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={p}>{paragraph}</p>
+            <p className={`${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={p}></p>
         </article>
     )
 }

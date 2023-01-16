@@ -19,8 +19,8 @@ function NavBar({rutas}) {
             <section className='routes'>
                 <NavPages routePage={"Tienda"} />
                 <NavPages routePage={"Suscripción"} />
-                <NavPages routePage={"paraEmpresas"} />
-                <NavPages routePage={"sobreNosotros"} />
+                <NavPages routePage={"Para empresas"} />
+                <NavPages routePage={"Sobre nosotros"} />
                 <NavPages routePage={"contacto"} />
             </section>
             :
@@ -47,7 +47,6 @@ function NavBar({rutas}) {
                     </Link>
                 }
                 </div>
-                <p id="cuentaProductos"></p>
             </section>
         </nav>
     )

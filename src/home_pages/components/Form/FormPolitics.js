@@ -1,4 +1,5 @@
 import { useContext, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FormContext } from "../../../context/FormContext";
 
 function FormPolitics() {
@@ -7,6 +8,7 @@ function FormPolitics() {
     
     function checkPolitics() {
         let politicsValue = politics.current.checked;
+
         if (politicsValue === true) {
             politics.current.parentElement.nextSibling.innerText = "";
             setPolitics(politicsValue);
@@ -21,7 +23,7 @@ function FormPolitics() {
             <div className="flex gap-3">
                 <input type="checkbox"  name="politics" id="politics" onChange={checkPolitics} ref={politics} />
                 <p className="text-politicsLetters text-14">
-                    Acepto la <a className="font-semibold cursor-pointer">Política de privacidad</a> y los <a className="font-semibold cursor-pointer">Términos y condiciones</a>
+                    Acepto la <Link className="font-semibold cursor-pointer">Política de privacidad</Link> y los <Link className="font-semibold cursor-pointer">Términos y condiciones</Link>
                 </p>
             </div>
             <small className="text-red font-semibold text-14"></small>
