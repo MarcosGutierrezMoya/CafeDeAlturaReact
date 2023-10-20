@@ -2,21 +2,19 @@ import CheckUser from "./CheckForm/CheckUser";
 import CheckCard from "./CheckForm/CheckCard";
 import CheckCvc from "./CheckForm/CheckCvc";
 import CheckExpiration from "./CheckForm/CheckExpiration";
-import bizumLogo from "../../img/bizumImg.png"
+
 import FormUser from "./Form/FormUser";
 import FormPhone from "./Form/FormPhone";
 import FormMail from "./Form/FormMail";
 import CheckLands from "./CheckForm/CheckLands";
 
 function CheckForm() {
-    // const {setPhone,setUserName,isRequired,isBetween} = useContext(FormContext);
-    // const [valid,setValid] = useState(0);
-
+ 
     return(
         <form className="flex flex-col gap-6 w-[792px]">
             <h3 className="text-18 font-semibold">Seleccionar método de pago</h3>
             <section className="flex gap-4">
-                <input type={"radio"} />
+                <input type={"radio"} defaultChecked={true} name="paidMethod"/>
                 <div>
                     <p className="text-14 font-semibold">Tarjeta de débito</p>
                     <p className="text-14">Opción estándar sin seguimiento</p>
@@ -31,17 +29,17 @@ function CheckForm() {
                 </div>
             </section>
             <section className="flex gap-4">
-                <input type={"radio"} />
+                <input type={"radio"} name="paidMethod"/>
                 <div>
                     <p className="text-14 font-semibold">Transferencia bancaria a la cuenta ES12 1234 1234 123457890</p>
                     <p className="text-14">Será necesario recibir el comprobante de la transferencia para preparar tu pedido</p>
                 </div>
             </section>
             <section className="flex gap-4">
-                <input type={"radio"} />
+                <input type={"radio"} name="paidMethod"/>
                 <div className="flex gap-4 items-center">
                     <p className="text-14 font-semibold">Bizum</p>
-                    <img src={bizumLogo} />
+                    <img src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/Bizumimg.png?alt=media&token=ce97dbe4-d5c0-411a-a07f-94aaa246f3ff&_gl=1*992k2x*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1Njc4MzUuNjAuMC4w"} />
                 </div>
             </section>
             <section className="flex flex-col gap-2 w-[521px]">

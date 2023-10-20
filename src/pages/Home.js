@@ -8,9 +8,9 @@ import NavBar from '../home_pages/NavBar';
 import Title from '../home_pages/Title';
 
 function Home() {
-    
+
     return(
-        <div>
+        <div className='w-[100%]'>
             <NavBar rutas={true} />
             <Title />
             <Benefits />

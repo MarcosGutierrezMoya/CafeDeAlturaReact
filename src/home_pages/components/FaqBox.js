@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import flechitaAbajo from '../../img/flechitaAbajo.svg'
+// import flechitaAbajo from '../../img/flechitaAbajo.svg'
 
 function FaqBox({pos}) {
     let question = "";
@@ -41,9 +41,9 @@ function FaqBox({pos}) {
 
     return(
         <article className={`bg-white p-24px flex flex-col gap-4 rounded-10px ${openBox?"":"h-20"} transition-[height] duration-500 w-[688px]`}>
-            <section className='flex justify-between'>
+            <section className='flex justify-between items-center'>
                 <h3 className='text-18 font-semibold text-faqLetters'>{question}</h3>
-                <img id={`flecha${pos}`} className={`${openBox?"":"rotate-180"} cursor-pointer`} onClick={openCloseFaq} src={flechitaAbajo} alt="abierto" />
+                <img id={`flecha${pos}`} className={`${openBox?"":"rotate-180"} cursor-pointer`} onClick={openCloseFaq} src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/upArrow.png?alt=media&token=0bd91dd2-be02-4a90-9d24-9da2bcc45a7d&_gl=1*5l6duk*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1NjY5MjkuNjAuMC4w"} alt="abierto" />
             </section>
             <div className={`bg-lightGrey h-1 rounded-4px ${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={divider}/>
             <p className={`${openBox?"opacity-100":"opacity-0"} transition-opacity duration-700`} ref={p}></p>

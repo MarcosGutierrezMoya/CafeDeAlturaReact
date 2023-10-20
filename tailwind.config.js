@@ -75,7 +75,7 @@ module.exports = {
         '100%': '100%',
       },
       backgroundImage: {
-        'cafeBg': "url('./img/cafe.jpg')",
+        "cafe":"url('https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/background-coffe.jpg?alt=media&token=79b1b2d9-c179-4597-9f32-0019e61c6917&_gl=1*1561uya*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzQ2MTQzMS4xMS4xLjE2OTc0NjQyMDMuNjAuMC4w')"
       },
       dropShadow: {
         'letters': '0 3px 1px rgba(0, 0, 0, 0.3)',

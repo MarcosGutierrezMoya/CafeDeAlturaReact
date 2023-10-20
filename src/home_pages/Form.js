@@ -1,6 +1,3 @@
-import tlfLogoGris from '../img/tlfLogoGris.svg';
-import mailLogoGris from '../img/mailLogoGris.svg';
-// import FormBox from './components/FormBox';
 import FormUser from './components/Form/FormUser';
 import FormMail from './components/Form/FormMail';
 import FormPhone from './components/Form/FormPhone';
@@ -29,9 +26,9 @@ function Form() {
                     <main className='text-formInfoLetters flex flex-col gap-6'>
                         <p>También puedes ponerte en contacto con nostros en nuestra dirección o a través del teléfono de la tienda.</p>
                         <p>742 Evergreen Terrace<br />Springfield, OR 12345</p>
-                        <div className='flex flex-col gap-3'>
-                            <p className='flex gap-3'><img src={tlfLogoGris} alt="telefoncito" /> +1 (555) 123-4567</p>
-                            <p className='flex gap-3'><img src={mailLogoGris} alt="logo correo" /> support@example.com</p>
+                        <div className='flex flex-col gap-3 items-start'>
+                            <p className='flex gap-3 items-center'><img src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/greyPhone.png?alt=media&token=7ae118fc-09d8-4d8f-906f-14ae51cacc3e&_gl=1*11trd23*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1NjcyNDkuNDguMC4w"} alt="telefoncito" /> +1 (555) 123-4567</p>
+                            <p className='flex gap-3 items-center'><img src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/greyMail.png?alt=media&token=c531fc6e-fa12-402b-8275-362297fef4bc&_gl=1*zhpnhu*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1NjcyNDMuNTQuMC4wz"} alt="logo correo" /> support@example.com</p>
                         </div>
                         <p className='flex gap-1.5'>
                             ¿Buscas un trabajo?

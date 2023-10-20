@@ -4,7 +4,7 @@ import {ShopContext} from '../../context/ShopContext';
 import ShopCheck from "./CartCheck";
 
 function ShopZone() {
-    const {coffes,setCoffes,coffePrice, setCoffePrice,sendPrice, seturgentSendPrice} = useContext(ShopContext);
+    const {coffes,setCoffes,coffePrice, setCoffePrice,sendPrice, seturgentSendPrice, setTotalCoffees} = useContext(ShopContext);
     const standarSend = useRef();
     const urgentSend = useRef();
     let sumPrices = 0;
@@ -12,9 +12,8 @@ function ShopZone() {
     useEffect(()=>{
         if (sumPrices===0) {
             for (let i = 0; i < coffes.length; i++) {
-                sumPrices += parseInt(coffes[i].price);
+                sumPrices += parseInt(coffes[i].price * coffes[i].__v);
             }
-            console.log(sumPrices);
             setCoffePrice(sumPrices);
             standarSend.current.checked = true;
         }
@@ -41,15 +40,15 @@ function ShopZone() {
                     {coffes?.map((coffe,i)=>{
                         if (i<coffes.length-1) {
                             return(
-                                <div className="flex flex-col gap-6">
-                                    <ShopCoffe coffes={coffes} setCoffes={setCoffes} coffePrice={coffePrice} setCoffePrice={setCoffePrice} coffe={coffe}/>
+                                <div className="flex flex-col gap-6" key={i}>
+                                    <ShopCoffe coffes={coffes} setCoffes={setCoffes} coffePrice={coffePrice} setCoffePrice={setCoffePrice} coffe={coffe} setTotalCoffees={setTotalCoffees}/>
                                     <div className="bg-homeFormBg h-px rounded-4px transition-opacity duration-700"></div>
                                 </div>
                             )
                         }
                         else{
                             return(
-                                <ShopCoffe coffes={coffes} setCoffes={setCoffes} coffePrice={coffePrice} setCoffePrice={setCoffePrice} coffe={coffe}/>
+                                <ShopCoffe coffes={coffes} setCoffes={setCoffes} coffePrice={coffePrice} setCoffePrice={setCoffePrice} coffe={coffe} key={i} setTotalCoffees={setTotalCoffees}/>
                             )
                         }
                     })}
