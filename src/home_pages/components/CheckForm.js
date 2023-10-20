@@ -39,7 +39,7 @@ function CheckForm() {
                 <input type={"radio"} name="paidMethod"/>
                 <div className="flex gap-4 items-center">
                     <p className="text-14 font-semibold">Bizum</p>
-                    <img src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/Bizumimg.png?alt=media&token=ce97dbe4-d5c0-411a-a07f-94aaa246f3ff&_gl=1*992k2x*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1Njc4MzUuNjAuMC4w"} />
+                    <img src={"https://firebasestorage.googleapis.com/v0/b/cafe-de-altura-react.appspot.com/o/Bizumimg.png?alt=media&token=ce97dbe4-d5c0-411a-a07f-94aaa246f3ff&_gl=1*992k2x*_ga*MTI3MTkxMDI0MS4xNjg1MzU3Mzg4*_ga_CW55HF8NVT*MTY5NzU2NTgwOS4xMi4xLjE2OTc1Njc4MzUuNjAuMC4w"} alt="logo bizum"/>
                 </div>
             </section>
             <section className="flex flex-col gap-2 w-[521px]">
