@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
 function ShopCoffe({coffePrice,setCoffePrice,coffe,setCoffes,coffes,setTotalCoffees}) {
-    const [cuantity, setCuantity] = useState(1);
-
         
     function more() {
         coffes[coffes.findIndex(thisCoffe=> thisCoffe.brand === coffe.brand)].__v += 1
@@ -40,7 +38,7 @@ function ShopCoffe({coffePrice,setCoffePrice,coffe,setCoffes,coffes,setTotalCoff
                 <p><strong>{coffe.brand}</strong></p>
                 <p>Paquete de café, 250 gr</p>
             </div>
-            <h3 className="text-18 font-semibold">{`${coffe.price*cuantity},00€`}</h3>
+            <h3 className="text-18 font-semibold">{`${coffe.price*coffe.__v},00€`}</h3>
         </article>
     )
 }
